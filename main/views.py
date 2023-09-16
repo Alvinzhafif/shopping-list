@@ -10,8 +10,8 @@ def show_main(request):
     products = Product.objects.all()
 
     context = {
-        'name': 'Pak Bepe', # Your name
-        'class': 'PBP A', # Your PBP Class
+        'name': 'Alvin Zhafif Afilla', # Your name
+        'class': 'PBP KKI', # Your PBP Class
         'products': products
     }
 
@@ -37,6 +37,7 @@ def show_json(request):
 
 def show_xml_by_id(request, id):
     data = Product.objects.filter(pk=id)
+    # data[0].delete()
     return HttpResponse(serializers.serialize("xml", data), content_type="application/xml")
 
 def show_json_by_id(request, id):
